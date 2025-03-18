@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הויפט נייעס - "אברכים פארום צו פאסט דאס? - אידישע וועלט פארומס</title>
+  <meta name="description" content="הויפט נייעס - 'אברכים פארום צו פאסט דאס?' - אידישע וועלט פארומס">
+  <meta name="keywords" content="אידישע, וועלט, פארומס, אידיש, יידיש, דיסקוסיע, נייעס">
+  <link rel="icon" href="https://ext.same-assets.com/3581370028/3899846979.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      direction: rtl;
+      background-color: #f5f8fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background: linear-gradient(to bottom, #1498d7, #0f7eb3);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .site-title {
+      text-align: left;
+    }
+
+    .site-title h1 {
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .site-title p {
+      font-size: 12px;
+    }
+
+    nav {
+      background-color: #e4edf3;
+      padding: 10px 20px;
+      border-bottom: 1px solid #d1d9e0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav a {
+      color: #20435c;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    .breadcrumb {
+      background-color: #e4edf3;
+      padding: 8px 15px;
+      font-size: 12px;
+      border-bottom: 1px solid #d1d9e0;
+    }
+
+    .breadcrumb a {
+      color: #20435c;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .breadcrumb span {
+      margin-left: 5px;
+      color: #666;
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .topic-header {
+      margin-bottom: 20px;
+      border: 1px solid #d1d9e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .topic-title-bar {
+      background: linear-gradient(to bottom, #1498d7, #0f7eb3);
+      color: white;
+      padding: 10px 15px;
+    }
+
+    .topic-title-bar h1 {
+      font-size: 18px;
+    }
+
+    .topic-actions {
+      background-color: #e4edf3;
+      padding: 8px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      border-bottom: 1px solid #d1d9e0;
+    }
+
+    .topic-pagination {
+      display: flex;
+      gap: 5px;
+    }
+
+    .topic-pagination a {
+      display: inline-block;
+      padding: 2px 6px;
+      background-color: white;
+      border: 1px solid #d1d9e0;
+      border-radius: 3px;
+      color: #20435c;
+      text-decoration: none;
+    }
+
+    .topic-pagination a.active {
+      background-color: #20435c;
+      color: white;
+    }
+
+    .post {
+      margin-bottom: 20px;
+      border: 1px solid #d1d9e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .post-header {
+      background-color: #e4edf3;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #d1d9e0;
+    }
+
+    .post-author {
+      font-weight: 600;
+      color: #20435c;
+    }
+
+    .post-date {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .post-content {
+      display: flex;
+    }
+
+    .post-sidebar {
+      width: 150px;
+      padding: 15px;
+      background-color: #f5f8fa;
+      border-left: 1px solid #d1d9e0;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      background-color: #e4edf3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .user-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #20435c;
+    }
+
+    .user-title {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .user-stats {
+      font-size: 12px;
+      color: #666;
+      text-align: right;
+    }
+
+    .user-stats div {
+      margin-bottom: 5px;
+    }
+
+    .post-body {
+      flex: 1;
+      padding: 15px;
+    }
+
+    .post-text {
+      line-height: 1.6;
+    }
+
+    .post-footer {
+      border-top: 1px solid #d1d9e0;
+      padding: 10px 15px;
+      font-size: 12px;
+      text-align: left;
+      color: #666;
+    }
+
+    .reply-form {
+      margin-top: 20px;
+      border: 1px solid #d1d9e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .reply-header {
+      background: linear-gradient(to bottom, #1498d7, #0f7eb3);
+      color: white;
+      padding: 8px 15px;
+    }
+
+    .reply-header h2 {
+      font-size: 16px;
+    }
+
+    .reply-body {
+      padding: 15px;
+    }
+
+    .reply-body textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid #d1d9e0;
+      border-radius: 4px;
+      resize: vertical;
+      direction: rtl;
+    }
+
+    .reply-buttons {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .reply-button {
+      background: linear-gradient(to bottom, #1498d7, #0f7eb3);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #e4edf3;
+      padding: 15px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #d1d9e0;
+    }
+
+    footer a {
+      color: #20435c;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="https://ext.same-assets.com/3581370028/3899846979.png" alt="Ivelt Logo">
+      </div>
+      <div class="site-title">
+        <h1>אידישע וועלט פארומס</h1>
+        <p>אלעס איבער אידישע וועלט • אן אייגענע וועלט</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="nav-left">
+        <a href="index.html">היים זייט</a>
+        <a href="#">נייע אשכול</a>
+      </div>
+      <div class="nav-right">
+        <a href="#">הילף</a>
+        <a href="#">פארום כללים</a>
+        <a href="#">לאגין</a>
+        <a href="#">רעגיסטרירן</a>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="index.html">היים זייט</a> <span>></span>
+      <a href="#">אלגעמיינע דיסקוסיעס</a> <span>></span>
+      <span>הויפט נייעס - "אברכים פארום צו פאסט דאס?</span>
+    </div>
+
+    <div class="main-content">
+      <div class="topic-header">
+        <div class="topic-title-bar">
+          <h1>הויפט נייעס - "אברכים פארום צו פאסט דאס?</h1>
+        </div>
+        <div class="topic-actions">
+          <div class="topic-info">
+            אשכול התחלה: March 18, 2025 8:42 am | תגובות: 2558179 | געזען: 9170
+          </div>
+          <div class="topic-pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <span>...</span>
+            <a href="#">367</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Original Post -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-author"><a href="profile.html" style="color: #20435c; text-decoration: none;">דזשאמפער</a></div>
+          <div class="post-date">March 18, 2025 8:42 am</div>
+        </div>
+        <div class="post-content">
+          <div class="post-sidebar">
+            <div class="avatar">
+              <a href="profile.html"><img src="https://ext.same-assets.com/3562490488/3013182092.png" alt="User Avatar"></a>
+            </div>
+            <div class="user-name"><a href="profile.html" style="color: #20435c; text-decoration: none;">דזשאמפער</a></div>
+            <div class="user-title">אקטיווער מיטגלידער</div>
+            <div class="user-stats">
+              <div>תגובות: 27,598</div>
+              <div>רעגיסטרירט: Apr 2010</div>
+              <div>לאקאציע: ניו יארק</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <div class="post-text">
+              <p><strong>ברייקינג נייעס:</strong> די נייע געזעץ פארלאגע וואס איז פארגעשלאגן געווארן אין קאנגרעס, איז היינט דורכגעגאנגען מיט א מערהייט פון 56 קעגן 42 שטימען.</p>
+              <p>וואס איז אייער מיינונג? צו פאסט דאס צו דיסקוטירן אין אן אברכים פארום?</p>
+              <p>אויב עס איז נישט פאסיג, זאגט דעם מאדעראטאר אז ער זאל דאס אפשאקלען.</p>
+              <p>לאמיר הערן אייערע מיינונגען...</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div>Post #1</div>
+        </div>
+      </div>
+
+      <!-- Reply 1 -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-author">לייזער</div>
+          <div class="post-date">March 18, 2025 8:45 am</div>
+        </div>
+        <div class="post-content">
+          <div class="post-sidebar">
+            <div class="avatar">
+              <img src="https://ext.same-assets.com/3562490488/3013182092.png" alt="User Avatar">
+            </div>
+            <div class="user-name">לייזער</div>
+            <div class="user-title">טרייער באנוצער</div>
+            <div class="user-stats">
+              <div>תגובות: 14,882</div>
+              <div>רעגיסטרירט: May 2015</div>
+              <div>לאקאציע: ברוקלין</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <div class="post-text">
+              <p>איך פארשטיי נישט פארוואס דאס זאל נישט זיין פאסיג, אזא וויכטיגע נייעס וואס האט אן עפעקט אויף אונז אלע.</p>
+              <p>יעדער זאל קענען אויסדרוקן זיין מיינונג, אבער לאמיר געדענקען צו זיין רעספעקטפול צו אנדערע.</p>
+              <p>גוטע טאפיק!</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div>Post #2</div>
+        </div>
+      </div>
+
+      <!-- Reply 2 -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-author">קאמפיוטער שוואַך וואלף</div>
+          <div class="post-date">March 18, 2025 8:52 am</div>
+        </div>
+        <div class="post-content">
+          <div class="post-sidebar">
+            <div class="avatar">
+              <img src="https://ext.same-assets.com/3562490488/3013182092.png" alt="User Avatar">
+            </div>
+            <div class="user-name">קאמפיוטער שוואַך וואלף</div>
+            <div class="user-title">מאדעראטאר</div>
+            <div class="user-stats">
+              <div>תגובות: 52,441</div>
+              <div>רעגיסטרירט: Sep 2012</div>
+              <div>לאקאציע: מאנסי</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <div class="post-text">
+              <p>ס'איז אודאי פאסיג, סיי וועלכע נייעס וואס האט א שייכות צו אונזער לעבן איז פאסיג פאר א דיסקוסיע.</p>
+              <p>איך געדענק ווען מיר האבן געהאט א ענליכע דיסקוסיע פאר צוויי יאר צוריק ווען די אנדערע געזעץ איז דורכגעגאנגען. יענע צייט האט עס אויך געהאט א גרויסע עפעקט אויף אונזער קהילה.</p>
+              <p>איך האף אז מיר וועלן האבן א פראדוקטיווע דיסקוסיע דא.</p>
+              <hr>
+              <p><em>טאקע קאמפיוטער שוואַך, אבער מיר פרובירן...</em></p>
+            </div>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div>Post #3</div>
+        </div>
+      </div>
+
+      <!-- Reply Form -->
+      <div class="reply-form">
+        <div class="reply-header">
+          <h2>שרייב א תגובה</h2>
+        </div>
+        <div class="reply-body">
+          <textarea placeholder="דיין תגובה..."></textarea>
+          <div class="reply-buttons">
+            <button class="reply-button">שיקן</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <a href="index.html">היים זייט</a>
+        <a href="#">לעשן אלע קאקיס פון דעם פארום</a>
+        <a href="#">קאנטאקט פארום אדמיניסטראטער</a>
+        <a href="#">שטיצן</a>
+      </div>
+      <div style="margin-top: 10px">
+        Powered by Board3 Portal © 2009 - 2021 Board3 Group
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
